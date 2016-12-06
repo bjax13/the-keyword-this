@@ -54,6 +54,7 @@ console.log(user.getUsername());
     this.move = 0;
     this.moveCar = function (){
       this.move+=10;
+      return this.move;
     }
 
   }
@@ -81,7 +82,7 @@ var getYear = function(){
 //Note(no tests)
   //Code Here
   console.log(getYear.call(prius));
-  console.log(getYear.call(mustang));
+  console.log(getYear.apply(mustang));
 
 
 
@@ -97,14 +98,16 @@ var getMyUsername = function() {
  return this.username;
 };
 
-var userName = getMyUsername(); //Fix this
+var userName = getMyUsername.call(myUser); //Fix this
+
+console.log(userName);
 
 //Above you're given an object, and  a function. What will the getUsername function return?
 //Note(no tests)
-  //Answer Here
+  //Answer Here either at call function or an apply function
 
 //In the example above, what is the 'this keyword' bound to when getUsername runs?
 
-  //Answer Here
+  //Answer Here the window
 
 //Fix the getMyUsername invocation so that userName will be equal to 'iliketurtles'.
