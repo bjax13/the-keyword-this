@@ -48,9 +48,9 @@ console.log(user.getUsername());
 
   //Function Invocations Here
   function Car(model, make, year) {
-    this.carModel = model;
-    this.carMake = make;
-    this.carYear = year;
+    this.model = model;
+    this.make = make;
+    this.year = year;
     this.move = 0;
     this.moveCar = function (){
       this.move+=10;
@@ -75,10 +75,14 @@ var getYear = function(){
   return this.year;
 };
 
-//Above you're given the getYear function. Using your prius and mustang objects from above, use the proper syntax that will allow for you to call the getYear function with the prius then the mustang objects being the focal objects. *Don't add getYear as a property on both objects*.
+//Above you're given the getYear function. Using your prius and mustang objects from above, use the proper syntax that will allow for you to call
+//the getYear function with the prius then the mustang objects being the focal objects. *Don't add getYear as a property on both objects*.
 
 //Note(no tests)
   //Code Here
+  console.log(getYear.call(prius));
+  console.log(getYear.call(mustang));
+
 
 
 //New Problem
